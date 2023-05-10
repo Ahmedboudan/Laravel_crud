@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\HelloWorldController;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,26 +14,12 @@ use App\Http\Controllers\HelloWorldController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('hello');
-// });
 
 //Route::get('/','App\Http\Controllers\HelloWorldController@index');
-Route::get('/',[HelloWorldController::class,'index']);
-
-
-
-
-
-// Route::get('/bonjour', function(){
-//     return 'bonjour';
-// });
-// Route::get('/hello',function(){
-//     return view('hello');
-// });
-// Route::get('/test',function(){
-//     return response()->json([
-//         'titre'=> 'mon titre',
-//         'description'=> 'Ma description'
-//     ]);
-// });
+Route::get('/',[EtudiantController::class,'lister']);
+Route::get('/ajouter',[EtudiantController::class,'ajouter']);
+Route::post('/ajouter/traitement',[EtudiantController::class,'ajouter_traitement']);
+Route::get('/modifier/{id}',[EtudiantController::class,'modifier']);
+Route::post('/modifier/traitement',[EtudiantController::class,'modifier_traitement']);
+Route::get('/supprimer/{id}',[EtudiantController::class,'supprimer']);
+Route::get('/rechercher',[EtudiantController::class,'rechercher']);
