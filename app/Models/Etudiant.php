@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Filiere;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Etudiant extends Model
 {
@@ -14,6 +16,12 @@ class Etudiant extends Model
         'nom',
         'prenom',
         'niveau',
-        'filiere'
+        'code_f'
     ];
+
+    
+    public function filiere():BelongsTo
+    {
+        return $this->belongsTo(Filiere::class);
+    }
 }

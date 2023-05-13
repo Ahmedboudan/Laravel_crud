@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('etudiants', function (Blueprint $table) {
             $table->id();
-            $table->string("code")->unique();
-            $table->string("nom");
-            $table->string("prenom");
-            $table->integer("niveau");
-            $table->string("filiere");
+            $table->string('code');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('niveau');
+            $table->string('code_f');
+            $table->foreign('code_f')->references('code_f')->on('filieres');
             $table->timestamps();
         });
     }

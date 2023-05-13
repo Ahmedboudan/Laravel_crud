@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Etudiant;
+use Illuminate\Support\Facades\Auth;
 
 class EtudiantController extends Controller
 {
@@ -23,9 +24,18 @@ class EtudiantController extends Controller
     }
 
     public function rechercher(Request $request){
-        $etudiants = Etudiant::where('code',$request->code)->first();
-        return view("etudiant.lister",compact('etudiants'));
+        $code = $request->code;
+        if($code!=''){
+            $etudiants = Etudiant::where('code', $code)->paginate(3);
+            return view('etudiant.lister', compact('etudiants'))->with('code', $code);
+        }
+        else{
+            $etudiants = Etudiant::paginate(3);
+            return view("etudiant.lister",compact('etudiants'));
+        }
+        
     }
+   
 
     public function modifier_traitement(Request $request){
         $request->validate([
@@ -33,15 +43,14 @@ class EtudiantController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'niveau' => 'required',
-            'filiere' => 'required',
+            'code_f' => 'required',
         ]);
-        var_dump($request->id);
         $etudiant = Etudiant::find($request->id);
         $etudiant->code = $request->code;
         $etudiant->nom = $request->nom;
         $etudiant->prenom = $request->prenom;
         $etudiant->niveau = $request->niveau;
-        $etudiant->filiere = $request->filiere;
+        $etudiant->code_f = $request->code_f;
         $etudiant->save();
         return redirect('/')->with('status','Etudiant(e) modifié(e) avec succes ! ');
     }
@@ -52,7 +61,7 @@ class EtudiantController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'niveau' => 'required',
-            'filiere' => 'required',
+            'code_f' => 'required',
         ]);
         
         Etudiant::create($data);
