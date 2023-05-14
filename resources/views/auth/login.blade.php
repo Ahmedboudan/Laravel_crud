@@ -30,7 +30,7 @@
         <input type="password" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe">
       </div>
       <button type="submit" class="btn btn-primary">Envoyer</button>
-      <a href="/register" class="btn btn-primary text-white">S'inscrire</a>
+      <a href="/register" class="btn btn-outline-primary ">S'inscrire</a>
     </form></div>
     </div>
   </div>

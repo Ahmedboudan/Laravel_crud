@@ -56,7 +56,7 @@
                                 <div class="invalid-feedback">Veuillez remplir ce champ</div>
                             </div>
                             <button type="submit" class="btn btn-primary">Envoyer</button>
-                            <a class="btn btn-danger" href="/"><i class="bi bi-house"></i> </a>
+                            <a class="btn btn-info" href="/"><i class="bi bi-house"></i> </a>
                         </form>
                     </div>
                 </div>

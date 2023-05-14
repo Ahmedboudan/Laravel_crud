@@ -47,7 +47,7 @@
 
     <div class="container col-md-10 mt-5">
         <div class="card ">
-            <div class="card-header bg-info ">
+            <div class="card-header bg-info text-white">
                 <h5>Gestion des élèves</h5>
             </div>
             <div class="card-body mb-4">
