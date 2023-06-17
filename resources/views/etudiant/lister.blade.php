@@ -68,7 +68,7 @@
                                 <th scope="col" class="text-center">Prenom</th>
                                 <th scope="col" class="text-center">Niveau</th>
                                 <th scope="col" class="text-center">Filiere</th>
-                                <th scope="col" class="text-center">Actions</th> <!-- Modifier l'en-tête -->
+                                <th scope="col" class="text-center" colspan="2">Actions</th> <!-- Modifier l'en-tête -->
                             </tr>
                         </thead>
                         <tbody>
@@ -80,18 +80,17 @@
                                 <td class="text-center">{{ $etudiant->niveau }}</td>
                                 <td class="text-center">{{ $etudiant->code_f }}</td>
                                 <td class="text-center">
-                                    <div class="d-flex justify-content-center">
-                                        <a href="/modifier/{{ $etudiant->id }}"
-                                            class="btn btn-sm btn-outline-primary mr-4">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                        <a href="/supprimer/{{ $etudiant->id }}"
-                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?')"
-                                            class="btn btn-sm btn-outline-danger">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
+                                    <a href="/modifier/{{ $etudiant->id }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/supprimer/{{ $etudiant->id }}"
+                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?')"
+                                        class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
 
-                                    </div>
                                 </td>
                             </tr>
                             @endforeach
