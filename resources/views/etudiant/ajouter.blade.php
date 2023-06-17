@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Ajout d'un étudiant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .form-group label {
+            display: block;
+        }
+    </style>
 </head>
 
 <body class="bg-secondary">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 mx-auto">
+        <div class="row justify-content-center">
+            <div class="col-sm-10 col-md-6">
                 <div class="card mt-4 mb-4">
-                    <div class="card-header text-center bg-info text-white">Ajout d'un etudiant</div>
+                    <div class="card-header bg-info text-center text-white">
+                        Ajout d'un étudiant
+                    </div>
                     <div class="card-body">
                         <form method="post" action="/ajouter/traitement" class="was-validated">
                             @csrf
@@ -55,14 +61,21 @@
                                 <div class="valid-feedback">Valide</div>
                                 <div class="invalid-feedback">Veuillez remplir ce champ</div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Envoyer</button>
-                            <a class="btn btn-info" href="/"><i class="bi bi-house"></i> </a>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                                <a class="btn btn-info" href="/"><i class="bi bi-house"></i> </a>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://unpkg.com/bootstrap-icons@1.6.1/bootstrap-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
