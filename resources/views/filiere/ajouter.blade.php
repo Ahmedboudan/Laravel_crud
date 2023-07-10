@@ -25,50 +25,27 @@
             <div class="col-sm-10 col-md-6">
                 <div class="card mt-4 mb-4">
                     <div class="card-header bg-info text-center text-white">
-                        Ajout d'un étudiant
+                        Ajout d'une filière
                     </div>
                     <div class="card-body">
-                        <form method="post" action="/ajouter/traitement" class="was-validated">
+                        <form method="post" action="/ajouter_filiere/traitement" class="was-validated">
                             @csrf
                             <div class="form-group">
                                 <label for="code">Code</label>
-                                <input type="text" class="form-control" placeholder='Code' name="code" required>
+                                <input type="text" class="form-control" placeholder='Code' name="code_f" required>
                                 <div class="valid-feedback">Valide</div>
                                 <div class="invalid-feedback">Veuillez remplir ce champ</div>
                             </div>
                             <div class="form-group">
-                                <label for="nom">Nom</label>
-                                <input type="text" class="form-control" name="nom" required placeholder='Nom'>
+                                <label for="nom">Désignation</label>
+                                <input type="text" class="form-control" name="designation" required placeholder='Nom'>
                                 <div class="valid-feedback">Valide</div>
                                 <div class="invalid-feedback">Veuillez remplir ce champ</div>
                             </div>
-                            <div class="form-group">
-                                <label for="prenom">Prenom</label>
-                                <input type="text" class="form-control" name="prenom" placeholder='Prenom' required>
-                                <div class="valid-feedback">Valide</div>
-                                <div class="invalid-feedback">Veuillez remplir ce champ</div>
-                            </div>
-                            <div class="form-group">
-                                <label for="niveau">Niveau</label>
-                                <select class="form-control" id="niveau" name="niveau" required>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="filiere">Filiere</label>
-                                <select class="form-control" id="niveau" name="code_f" required>
-                                    <option value="GINF">GINF</option>
-                                    <option value="GIL">GIL</option>
-                                    <option value="GSTR">GSTR</option>
-                                </select>
-                                <div class="valid-feedback">Valide</div>
-                                <div class="invalid-feedback">Veuillez remplir ce champ</div>
-                            </div>
+
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Envoyer</button>
-                                <a class="btn btn-info" href="/"><i class="bi bi-house"></i> </a>
+                                <a class="btn btn-info" href="/lister_filiere"><i class="bi bi-arrow-right-square"></i> </a>
                             </div>
                         </form>
                     </div>

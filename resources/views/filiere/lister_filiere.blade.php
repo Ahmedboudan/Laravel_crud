@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-secondary">
@@ -17,21 +18,20 @@
     </div>
     @endif
     @include('templates.navbar')
-
     <div class="container mt-5">
         <div class="card">
             <div class="card-header bg-info text-white">
-                <h5>Gestion des élèves</h5>
+                <h5>Gestion des filieres</h5>
             </div>
             <div class="card-body mb-4">
-                <div class="card-title">Liste des élèves</div>
+                <div class="card-title">Liste des filieres</div>
                 <form action="/rechercher" method="get" class="form-inline mb-3">
                     <div class="form-group d-flex align-items-center">
-                        <input type="text" name="code" value="{{ isset($code) ? $code : '' }}" class="form-control" placeholder="Rechercher avec le code...">
+                        <input type="text" name="code" value="{{ isset($code) ? $code : '' }}" class="form-control"
+                            placeholder="Rechercher avec le code...">
                         <button type="submit" class="btn btn-outline-primary ml-2"><i class="bi bi-search"></i></button>
                     </div>
-                    <a class="btn btn-primary ml-2" href="/ajouter"><i class="bi bi-plus"></i></a>
-
+                    <a class="btn btn-primary ml-2" href="/ajouter_filiere"><i class="bi bi-plus"></i></a>
                 </form>
 
                 <div class="table-responsive">
@@ -39,28 +39,24 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col" class="text-center">Code</th>
-                                <th scope="col" class="text-center">Nom</th>
-                                <th scope="col" class="text-center">Prenom</th>
-                                <th scope="col" class="text-center">Niveau</th>
-                                <th scope="col" class="text-center">Filiere</th>
+                                <th scope="col" class="text-center">Désignation</th>
                                 <th scope="col" class="text-center" colspan="2">Actions</th> <!-- Modifier l'en-tête -->
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($etudiants as $etudiant)
+                            @foreach ($filieres as $filiere)
                             <tr>
-                                <td class="text-center">{{ $etudiant->code }}</td>
-                                <td class="text-center">{{ $etudiant->nom }}</td>
-                                <td class="text-center">{{ $etudiant->prenom }}</td>
-                                <td class="text-center">{{ $etudiant->niveau }}</td>
-                                <td class="text-center">{{ $etudiant->code_f }}</td>
+                                <td class="text-center">{{ $filiere->code_f }}</td>
+                                <td class="text-center">{{ $filiere->designation }}</td>
                                 <td class="text-center">
-                                    <a href="/modifier/{{ $etudiant->id }}" class="btn btn-sm btn-warning">
+                                    <a href="/modifier_filiere/{{ $filiere->id }}" class="btn btn-sm btn-warning">
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/supprimer/{{ $etudiant->id }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?')" class="btn btn-sm btn-danger">
+                                    <a href="/supprimer_filiere/{{ $filiere->id }}"
+                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette filiere ?')"
+                                        class="btn btn-sm btn-danger">
                                         <i class="bi bi-trash"></i>
                                     </a>
 
@@ -71,7 +67,7 @@
                     </table>
                 </div>
                 <div class="text-center">
-                    {{ $etudiants->links() }}
+                    {{ $filieres->links() }}
                 </div>
             </div>
         </div>
