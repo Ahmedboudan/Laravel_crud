@@ -35,7 +35,7 @@ class UserController extends Controller
     if (Auth::attempt(['email' => $email, 'password' => $password])) {
       $request->session()->regenerate();
       $user = Auth::user();
-      Mail::to('ahmedboudan20@gmail.com')->send(new SignUp($user));
+      //Mail::to('ahmedboudan20@gmail.com')->send(new SignUp($user));
       return redirect()->intended();
     }
     return to_route('auth.login')->withErrors([
