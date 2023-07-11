@@ -23,7 +23,7 @@
     </div>
     @endif
     @include('templates.navbar')
-    <div class="container mt-5">
+    <div class="container" style="margin-top: 100px;">
         <div class="card">
             <div class="card-header bg-info text-white">
                 <h5>Gestion des filieres</h5>
