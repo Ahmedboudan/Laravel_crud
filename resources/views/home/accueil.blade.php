@@ -14,7 +14,7 @@
 <body style="background-color: #ddd;">
     @include('templates.navbar')
 
-    <div class="continer " style="margin-top: 70px;">
+    <div class="continer ">
         <div class="row justify-content-center">
             <div class="card w-75 mt-4 mb-5">
                 <div class="card-header bg-dark text-light">

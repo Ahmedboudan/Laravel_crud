@@ -56,7 +56,7 @@ class EtudiantController extends Controller
         $etudiant->niveau = $request->niveau;
         $etudiant->code_f = $request->code_f;
         $etudiant->save();
-        return redirect('/')->with('status', 'Etudiant(e) modifié(e) avec succes ! ');
+        return redirect('/lister')->with('status', 'Etudiant(e) modifié(e) avec succes ! ');
     }
 
     public function ajouter_traitement(Request $request)
@@ -77,7 +77,7 @@ class EtudiantController extends Controller
         Etudiant::create($data);
 
         // Redirecting the user back to the homepage with a success message
-        return redirect('/')->with('status', 'Etudiant ajouté(e) avec succès!');
+        return redirect('/lister')->with('status', 'Etudiant ajouté(e) avec succès!');
     }
 
 
@@ -85,6 +85,6 @@ class EtudiantController extends Controller
     {
         $etudiant = Etudiant::find($id);
         $etudiant->delete();
-        return redirect('/')->with('status', 'Etudiant supprimé(e) avec succes ! ');
+        return redirect('/lister')->with('status', 'Etudiant supprimé(e) avec succes ! ');
     }
 }

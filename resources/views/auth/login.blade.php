@@ -16,7 +16,7 @@
     @endif
   <div class="container col-md-6 mt-5">
     <div class="card">
-        <div class="card-header"> <h3>Formulaire d'authentification</h3></div>
+        <div class="card-header"> <h3>S'authentifier</h3></div>
         <div class="card-body">
         
     <form method="post" action="/authentifier">
@@ -29,7 +29,7 @@
         <label for="password">Mot de passe</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe">
       </div>
-      <button type="submit" class="btn btn-primary">Envoyer</button>
+      <button type="submit" class="btn btn-primary">Soumettre</button>
       <a href="/register" class="btn btn-outline-primary ">S'inscrire</a>
     </form></div>
     </div>

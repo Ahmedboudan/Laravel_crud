@@ -19,7 +19,7 @@
     @endif
     @include('templates.navbar')
 
-    <div class="container " style="margin-top: 100px;">
+    <div class="container mt-5">
         <div class="card">
             <div class="card-header bg-info text-white">
                 <h5>Gestion des élèves</h5>

@@ -18,7 +18,7 @@
             </div>
         </div>
         <hr class="bg-light">
-        <div class="text-center">
+        <div class="text-center pb-2">
             <p>&copy; 2023 Tous droits réservés - Ahmed BOUDAN</p>
         </div>
     </div>
